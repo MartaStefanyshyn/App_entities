@@ -3,10 +3,10 @@
 
   angular
     .module('entitiesAngular')
-    .controller('HomeController', HomeController);
+    .controller('NewEntityController', NewEntityController);
 
   /** @ngInject */
-  function HomeController() {
+  function NewEntityController() {
 
   }
 })();
