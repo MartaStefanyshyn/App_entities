@@ -1,0 +1,37 @@
+<!doctype html>
+<html ng-app="entitiesAngular">
+  <head>
+    <meta charset="utf-8">
+    <title>entitiesAngular</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="index.css" />
+
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse" role="navigation">
+        <ul class="nav navbar-nav">
+            <li><a ui-sref="home">Home</a></li>
+            <li><a ui-sref="about">About</a></li>
+        </ul>
+    </nav>
+
+
+    <div ui-view></div>
+
+
+    <script src="./bower_components/jquery/dist/jquery.js"></script>
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./bower_components/angular-resource/angular-resource.js"></script>
+    <script src="./bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="./bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+    <script src="app.js"></script>
+    <script src="route.js"></script>
+    <script src="home.controller.js"></script>
+
+
+  </body>
+</html>
