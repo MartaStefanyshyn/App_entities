@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width">
 
     <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link href="sticky-footer.css" rel="stylesheet">
-    <link rel="stylesheet" href="index.css" />
+    <link href="css/sticky-footer.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css" />
 
   </head>
   <body>
@@ -29,7 +29,7 @@
     <div class="col-md-2" ng-controller="EntitiesController as ent">
       <h1>Entities</h1>
       <ul class="list-group"   ng-repeat="entity in ent.entits">
-        <li class="list-group-item clearfix">{{entity.title}}</li>
+        <a href="#/one_entity/{{entity.title}}"><li class="list-group-item">{{entity.title}}</li></a>
       </ul>
     </div>
     <div class="container">
@@ -52,12 +52,13 @@
     <script src="./bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
-    <script src="app.js"></script>
-    <script src="route.js"></script>
-    <script src="home.controller.js"></script>
-    <script src="entities.controller.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/route.js"></script>
+    <script src="js/controllers/home.controller.js"></script>
+    <script src="js/controllers/entities.controller.js"></script>
     <script src="new.entity.controller.js"></script>
     <script src="modal.controller.js"></script>
+    <script src="js/controllers/one.entity.controller.js"></script>
 
 
   </body>

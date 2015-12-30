@@ -6,7 +6,7 @@
     .controller('EntitiesController', EntitiesController);
 
   /** @ngInject */
-  function EntitiesController() {
+  function EntitiesController($location) {
     var vm = this;
     vm.entits = [];
     for (var i = 0; i<localStorage.length; i++) {
@@ -20,6 +20,9 @@
     };
     vm.deleteEntity = function(item){
       localStorage.removeItem(item)
+    };
+    vm.showEntity = function(title){
+      $location.path('/one_entity/' + title);
     };
   }
 })();

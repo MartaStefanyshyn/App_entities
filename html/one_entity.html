@@ -1,0 +1,11 @@
+<h1>{{one_ent.entity.title}}</h1>
+    <div ng-hide="one_ent.editEnable">
+      <p ng-dblclick="one_ent.enableEdit()">{{one_ent.entity.description}}</p>
+      <p ng-dblclick="one_ent.enableEdit()">{{one_ent.entity.text}}</p>
+    </div>
+    <div ng-show="one_ent.editEnable">
+      <input type="text" ng-model="one_ent.editableDescription" ng-show="one_ent.editEnable"><br/>
+      <input type="text" ng-model="one_ent.editableText" ng-show="one_ent.editEnable">
+    </div>
+<button ng-show="one_ent.editEnable" class="btn btn-success" ng-click="one_ent.save()">Save</button>
+<button class="btn btn-danger" ng-click="one_ent.deleteEntity(one_ent.entity.title)">Delete</button>
