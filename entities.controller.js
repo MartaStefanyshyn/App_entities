@@ -9,12 +9,17 @@
   function EntitiesController() {
     var vm = this;
     vm.entits = [];
+    for (var i = 0; i<localStorage.length; i++) {
+      vm.entits.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
+    };
+
     vm.addEntity = function(){
-      vm.entits.push(vm.entit);
+      localStorage.setItem(vm.entit.title, JSON.stringify(vm.entit));
+      vm.entits.push(JSON.parse(localStorage.getItem(vm.entit.title)));
       vm.entit = [];
     };
-    vm.deleteEntity = function(index){
-      vm.entits.splice(index, 1);
+    vm.deleteEntity = function(item){
+      localStorage.removeItem(item)
     };
   }
 })();

@@ -1,6 +1,19 @@
-<div class="container">
-  <input type="text" ng-model="ent.entit.title">
-  <input type="text" ng-model="ent.entit.description">
-  <input type="text" ng-model="ent.entit.text">
-  <button class="btn btn-success" ng-click="ent.addEntity()">Add</button>
+<div class="modal-header">
+    <h3>I'm a modal!</h3>
 </div>
+<form ng-submit="mod.ok()">
+  <div class="modal-body">
+    <label>Title</label>
+    <input type="text" ng-model="mod.entity.title" />
+    <label>Description</label>
+    <input type="text" ng-model="mod.entity.description" />
+    <label>Text</label>
+    <input type="text" ng-model="mod.entity.text" />
+  </div>
+  <div class="modal-footer">
+      <button  class="btn btn-warning" ng-click="mod.cancel()">Cancel</button>
+      <input type="submit" class="btn primary-btn" value="Submit" />
+  </div>
+</form>
+
+

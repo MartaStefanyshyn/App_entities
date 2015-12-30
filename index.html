@@ -20,17 +20,16 @@
             <li><a ui-sref="entity">Entities</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a ui-sref="new_entity">Create</a></li>
+            <li ng-controller="NewEntityController as new"><a ui-sref="entity" ng-click="new.open()">Create</a></li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <div id="sidebar-menu" class="col-md-2">
-      <ul class="sidebar-nav nav">
-        <li class="sidebar-brand">
-            <a href="#home">Home</a>
-        </li>
+    <div class="col-md-2" ng-controller="EntitiesController as ent">
+      <h1>Entities</h1>
+      <ul class="list-group"   ng-repeat="entity in ent.entits">
+        <li class="list-group-item clearfix">{{entity.title}}</li>
       </ul>
     </div>
     <div class="container">
@@ -58,7 +57,7 @@
     <script src="home.controller.js"></script>
     <script src="entities.controller.js"></script>
     <script src="new.entity.controller.js"></script>
-
+    <script src="modal.controller.js"></script>
 
 
   </body>
