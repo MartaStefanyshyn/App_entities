@@ -1,22 +1,34 @@
-<!-- <h1>Entities</h1>
-  <div>
-    <input type="text" ng-model="ent.entit.title">
-    <input type="text" ng-model="ent.entit.description">
-    <input type="text" ng-model="ent.entit.text">
-    <button class="btn btn-success" ng-click="ent.addEntity()">Add</button>
-    <table class="table">
-      <thead>
-        <th>Title</th>
-        <th>Description</th>
-        <th>Text</th>
-        <th colspan="2"></th>
-      </thead>
-      <tbody  ng-repeat="entity in ent.entits">
-        <td>{{entity.title}}</td>
-        <td>{{entity.description}}</td>
-        <td>{{entity.text}}</td>
-        <td><button class="btn btn-danger" ng-click="ent.deleteEntity(entity.title)">Delete</button></td>
-        <td><button class="btn btn-primary" ng-click="ent.showEntity(entity.title)">Show</button></td>
-      </tbody>
+<div class="col-md-2">
+  <h1>Entities</h1>
+  <ul class="list-group"   ng-repeat="entity in ent.entits">
+    <a href="#/one_entity/{{entity.title}}"><li class="list-group-item">{{entity.title}}</li></a>
+  </ul>
+</div>
+<div class="container">
+  <div id="static-content" class="col-md-10">
+    <h1>Entities</h1>
+    <div>
+      <input type="text" ng-model="ent.entit.title">
+      <input type="text" ng-model="ent.entit.description">
+      <input type="text" ng-model="ent.entit.text">
+      <button class="btn btn-success" ng-click="ent.addEntity()">Add</button>
+      <table class="table">
+        <thead>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Text</th>
+          <th colspan="2"></th>
+        </thead>
+        <tbody  ng-repeat="entity in ent.entits">
+          <td>{{entity.title}}</td>
+          <td>{{entity.description}}</td>
+          <td>{{entity.text}}</td>
+          <td><button class="btn btn-danger" ng-click="ent.deleteEntity(entity.title)">Delete</button></td>
+          <td><button class="btn btn-primary" ng-click="ent.showEntity(entity.title)">Show</button></td>
+        </tbody>
+      </table>
+    </div>
+    <button class="btn" ng-controller="NewController as new" ng-click="new.open({title: 'title', text: 'text', description: 'description'})">Create!</button>
+      <div>Got back from modal: {{ ent.entity }}</div>
   </div>
- -->
+</div>

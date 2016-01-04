@@ -6,7 +6,7 @@
     .controller('OneEntityController', OneEntityController);
 
   /** @ngInject */
-  function OneEntityController($stateParams) {
+  function OneEntityController($stateParams, $location) {
     var vm = this;
     vm.entity = JSON.parse(localStorage.getItem($stateParams.title));
     vm.editEnable = false;
@@ -25,8 +25,8 @@
       vm.disableEdit();
     };
     vm.deleteEntity = function(title){
-      console.log(title);
-      localStorage.removeItem(title)
+      localStorage.removeItem(title);
+      $location.path('/entity');
     };
     vm.showEntity = function(title){
       $location.path('/one_entity/' + title);
