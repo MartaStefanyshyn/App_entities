@@ -14,7 +14,7 @@
         templateUrl: 'html/new_entity.html',
         backdrop: true,
         windowClass: 'modal',
-        controller: function ModalInstanceCtrl($uibModalInstance, entity) {
+        controller: function ModalInstanceCtrl($uibModalInstance, entity, Flash) {
                       var vm = this;
                       vm.entity = entity;
                       vm.ok = function () {
@@ -23,7 +23,12 @@
                             entity[i] = vm.entity[i];
                           }
                         }
-                        $uibModalInstance.close(vm.entity);
+                        if (JSON.parse(localStorage.getItem(vm.entity.title))){
+                          Flash.create('danger', "Entity with such title already exist in LocalStarage")
+                        }
+                        else{
+                          $uibModalInstance.close(vm.entity);
+                        }
                       };
 
                       vm.cancel = function () {
