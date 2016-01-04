@@ -8,15 +8,17 @@
   /** @ngInject */
   function NewController($location, $uibModal, $log, $rootScope) {
     var vm = this;
-    vm.open = function (entity) {
+    vm.open = function (entity, header) {
       vm.entity = entity;
+      vm.header = header;
       var modalInstance = $uibModal.open({
         templateUrl: 'html/new_entity.html',
         backdrop: true,
         windowClass: 'modal',
-        controller: function ModalInstanceCtrl($uibModalInstance, entity, Flash) {
+        controller: function ModalInstanceCtrl($uibModalInstance, entity, header, Flash) {
                       var vm = this;
                       vm.entity = entity;
+                      vm.header = header;
                       vm.ok = function () {
                         for (var i in vm.entity) {
                           if (entity.hasOwnProperty(i)) {
@@ -39,6 +41,9 @@
         resolve: {
             entity: function () {
                 return vm.entity;
+            },
+            header: function () {
+                return vm.header;
             }
         }
       });
