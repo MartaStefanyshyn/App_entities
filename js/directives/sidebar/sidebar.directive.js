@@ -3,17 +3,17 @@
 
   angular
     .module('entitiesAngular')
-    .directive('sidebarEntities', sidebarEntities);
+    .directive('entitySidebar', entitySidebar);
 
   /** @ngInject */
-  function sidebarEntities() {
+  function entitySidebar() {
     return {
           restrict: "EAC",
           scope: {
             header: "@",
             entitiesList: "=",
         },
-        templateUrl: 'html/sidebar.html',
+        templateUrl: 'js/directives/sidebar/sidebar.html',
     };
   }
 })();
