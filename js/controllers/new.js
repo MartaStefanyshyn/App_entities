@@ -20,17 +20,16 @@
                       vm.entity = entity;
                       vm.header = header;
                       vm.ok = function () {
-                        for (var i in vm.entity) {
-                          if (entity.hasOwnProperty(i)) {
-                            entity[i] = vm.entity[i];
-                          }
-                        }
                         if (vm.header=="New Entity" && JSON.parse(localStorage.getItem(vm.entity.title))){
                           Flash.create('danger', "Entity with such title already exist in LocalStarage")
                         }
                         else{
                           $uibModalInstance.close(vm.entity);
                         }
+                      };
+
+                      vm.undo = function () {
+                        vm.entity = JSON.parse(localStorage.getItem(entity.title));
                       };
 
                       vm.cancel = function () {
