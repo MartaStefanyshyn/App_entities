@@ -30,6 +30,7 @@
 
                       vm.undo = function () {
                         vm.entity = JSON.parse(localStorage.getItem(entity.title));
+                        entity = JSON.parse(localStorage.getItem(entity.title));
                       };
 
                       vm.cancel = function () {

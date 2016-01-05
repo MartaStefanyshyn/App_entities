@@ -6,7 +6,7 @@
         <li><a ui-sref="entity">Entities</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li ng-controller="NewController as ent"><a ui-sref="entity" ng-click="ent.open({title: 'title', text: 'lalala', description: 'description'}, 'New Entity')">Create</a></li>
+        <li><a ui-sref="entity"><entity-modal name='Create' header="New Entity"  use_controller="ModalController" entity="{'title':'First entity', 'text':'first_text', 'description':'first_description'}">Create</entity-modal></a></li>
       </ul>
     </div>
   </div>
