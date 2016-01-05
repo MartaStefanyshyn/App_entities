@@ -25,7 +25,7 @@
                             entity[i] = vm.entity[i];
                           }
                         }
-                        if (JSON.parse(localStorage.getItem(vm.entity.title))){
+                        if (vm.header=="New Entity" && JSON.parse(localStorage.getItem(vm.entity.title))){
                           Flash.create('danger', "Entity with such title already exist in LocalStarage")
                         }
                         else{
@@ -48,8 +48,14 @@
         }
       });
       modalInstance.result.then(function (data) {
-        localStorage.setItem(data.title, JSON.stringify(data));
-        $rootScope.$emit('entityAdd', data);
+        if (vm.header == 'New Entity'){
+          localStorage.setItem(data.title, JSON.stringify(data));
+          $rootScope.$emit('entityAdd', data);
+        }
+        else{
+          localStorage[data.title] = JSON.stringify(data);
+          $rootScope.$emit('entityEdit', data);
+        }
       });
 
     };

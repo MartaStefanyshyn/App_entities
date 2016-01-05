@@ -6,9 +6,12 @@
     .controller('OneEntityController', OneEntityController);
 
   /** @ngInject */
-  function OneEntityController($stateParams, $location) {
+  function OneEntityController($stateParams, $location, $rootScope) {
     var vm = this;
     vm.entity = JSON.parse(localStorage.getItem($stateParams.title));
+    $rootScope.$on('entityEdit', function(event, obj){
+      vm.entity = JSON.parse(localStorage.getItem(obj.title));
+    });
     vm.editEnable = false;
     vm.enableEdit = function() {
       vm.editEnable = true;
