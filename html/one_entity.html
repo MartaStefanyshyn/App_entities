@@ -10,6 +10,6 @@
     <input type="text" ng-model="one_ent.editableText" ng-show="one_ent.editEnable">
   </div>
   <button ng-show="one_ent.editEnable" class="btn btn-success" ng-click="one_ent.save()">Save</button>
-  <button class="btn btn-primary" ng-controller="NewController as new" ng-click="new.open({title: one_ent.entity.title, text: one_ent.entity.text, description: one_ent.entity.description}, 'Edit Entity')">Edit</button>
+  <button class="btn btn-primary"><entity-modal name="Edit" header="Edit Entity"  use_controller="ModalController" entity="one_ent.entity">Edit</entity-modal></button>
   <button class="btn btn-danger" ng-click="one_ent.deleteEntity(one_ent.entity.title)">Delete</button>
 </div>

@@ -20,7 +20,7 @@
 
             scope.open = function(){
                 var modalInstance = $uibModal.open({
-                    templateUrl: 'html/new_entity.html',
+                    templateUrl: 'js/directives/modal/modal.html',
                     backdrop: true,
                     windowClass: 'modal',
                     controller:  scope.useController,
