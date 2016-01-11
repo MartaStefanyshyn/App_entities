@@ -28,7 +28,7 @@
         vm.entits.push(JSON.parse(localStorage.getItem(obj.title)));
       });
       vm.retrieveFromFile = function(){
-        $http.get('/entities.json')
+        $http.get('entities.json')
           .then(function(result) {
             angular.forEach(result.data, function(entity) {
               if (!JSON.parse(localStorage.getItem(entity.title))){
