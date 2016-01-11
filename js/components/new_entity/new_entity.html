@@ -7,18 +7,19 @@
     <label ng-show="mod.header == 'New Entity'">Title</label><br/>
     <input ng-show="mod.header == 'New Entity'" type="text" ng-model="mod.entity.title" /><br/>
     <label>Description</label><br/>
-    <input type="text" ng-model="mod.entity.description" /><br/>
+    <input type="text" ng-change="mod.showUndo()" ng-model="mod.entity.description" /><br/>
     <label>Text</label><br/>
-    <input type="text" ng-model="mod.entity.text" /><br/>
+    <input type="text" ng-model="mod.entity.text" ng-change="mod.showUndo()"/><br/>
   </div>
   <div class="modal-footer">
       <div class="col-md-2">
-        <button ng-show="mod.header == 'Edit Entity'" class="btn btn-primary" ng-click="mod.undo()">Undo</button>
+        <button ng-show="mod.header == 'Edit Entity' && mod.showu == true" class="btn btn-primary" ng-click="mod.undo()">Undo</button>
       </div>
-      <button class="btn btn-success" ng-click="mod.ok()">Submit</button>
+      <button class="btn btn-success" ng-enter="mod.ok()" ng-click="mod.ok()" autofocus="true">Submit</button>
       <button class="btn btn-warning" ng-click="mod.cancel()">Cancel</button>
       <!-- <input type="submit" class="btn btn-success" value="Submit" /> -->
   </div>
 </form>
+
 
 
