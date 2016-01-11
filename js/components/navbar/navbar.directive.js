@@ -3,13 +3,13 @@
 
   angular
     .module('entitiesAngular')
-    .directive('entityFooter', entityFooter);
+    .directive('entityNavbar', entityNavbar);
 
   /** @ngInject */
-  function entityFooter() {
+  function entityNavbar() {
     var directive = {
       restrict: 'E',
-      templateUrl: 'js/directives/footer/footer.html',
+      templateUrl: 'js/components/navbar/navbar.html',
     };
     return directive;
   }

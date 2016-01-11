@@ -10,24 +10,23 @@
     $stateProvider
       .state('home', {
         url: '/home',
-        templateUrl: 'html/home.html',
-        controller: 'HomeController',
-        controllerAs: 'home'
-      }).state('entity', {
-        url: '/entity',
-        templateUrl: 'html/entities.html',
-        controller: 'EntitiesController',
-        controllerAs: 'ent'
-      }).state('new_entity', {
-        url: '/new_entity',
-        templateUrl: 'html/new_entity.html',
-        controller: 'NewEntityController',
-        controllerAs: 'new_ent'
-      }).state('one_entity', {
-        url: '/one_entity/:title',
-        templateUrl: 'html/one_entity.html',
-        controller: 'OneEntityController',
-        controllerAs: 'one_ent'
+        views: {
+          '': {
+            templateUrl: 'templates/home.html'
+          },
+        }
+       }).state('entity', {
+         url: '/entity',
+         views: {
+          '': {
+            templateUrl: 'templates/entities.html'
+          },
+        }
+       }).state('one_entity', {
+         url: '/one_entity/:title',
+         templateUrl: 'js/components/one_entity/one_entity.html',
+         controller: 'OneEntityController',
+         controllerAs: 'one_ent'
       });
 
     $urlRouterProvider.otherwise('/');

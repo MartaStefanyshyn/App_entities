@@ -12,7 +12,7 @@
       vm.entity = entity;
       vm.header = header;
       var modalInstance = $uibModal.open({
-        templateUrl: 'html/new_entity.html',
+        templateUrl: 'js/components/new_entity/new_entity.html',
         backdrop: true,
         windowClass: 'modal',
         controller: function ModalInstanceCtrl($uibModalInstance, entity, header, Flash) {

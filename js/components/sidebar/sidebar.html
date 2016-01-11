@@ -1,0 +1,8 @@
+<div class="col-md-2">
+  <h1>{{header}}</h1>
+  <ul class="list-group"  ng-repeat="entity in vm.entits">
+    <a href="#/one_entity/{{entity.title}}"><li class="list-group-item">{{entity.title}}</li></a>
+  </ul>
+  <button class="btn btn-default" ng-click="vm.retrieveFromFile()">Retrieve JSON data</button>
+  <button class="btn btn-default" ng-click="vm.clearStorage()">Clear Storage</button>
+</div>
