@@ -16,17 +16,20 @@
           },
         }
        }).state('entity', {
-         url: '/entity',
-         views: {
+        url: '/entity',
+        views: {
           '': {
-            templateUrl: 'templates/entities.html'
+            template: '<entity-sidebar header="Entities"></entity-sidebar>'
           },
         }
        }).state('one_entity', {
-         url: '/one_entity/:title',
-         templateUrl: 'js/components/one_entity/one_entity.html',
-         controller: 'OneEntityController',
-         controllerAs: 'one_ent'
+        url: '/one_entity/:title',
+        views: {
+          '': {
+            template: function(params) {
+                   return "<entity-one title="+params.title+"></entity-one>"; }
+          }
+        }
       });
 
     $urlRouterProvider.otherwise('/');
