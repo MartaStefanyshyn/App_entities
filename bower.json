@@ -17,6 +17,7 @@
     "./idea"
   ],
   "dependencies": {
-    "angular-flash-alert": "~1.1.1"
+    "angular-flash-alert": "~1.1.1",
+    "camunda-bpm-sdk-js": "~7.4.1"
   }
 }

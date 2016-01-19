@@ -1,0 +1,23 @@
+#tasks > li {
+  cursor: pointer;
+  margin-bottom: 4em;
+}
+
+.layout {
+  position: absolute;
+  overflow: visible;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.layout > .column {
+  width: 50%;
+  overflow: auto;
+  position: absolute;
+  min-height: 100%;
+  padding: 1em;
+}
+.layout > .right {
+  right: 0;
+}

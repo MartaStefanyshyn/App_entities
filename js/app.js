@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('entitiesAngular', ['ngResource', 'ui.router', 'ui.bootstrap', 'flash']);
+    .module('entitiesAngular', ['ngResource', 'ui.router', 'ui.bootstrap', 'flash', 'cam.embedded.forms']);
 
 })();
 

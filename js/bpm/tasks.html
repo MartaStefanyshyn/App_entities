@@ -1,0 +1,14 @@
+<div class="column left">
+  <h2>Available tasks</h2>
+  <ul id="tasks">
+    <li ng-repeat="task in bpmc.tasks"
+        data-task-id="{{ task.id }}"
+        ng-click="bpmc.loadTaskForm($event)">
+      <h4>{{ (task.name || task.id) }}</h4>
+      <div ng-if="task.description">{{ task.description }}</div>
+    </li>
+  </ul>
+</div>
+
+<div class="column right">
+</div>

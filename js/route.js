@@ -30,6 +30,11 @@
                    return "<entity-one title="+params.title+"></entity-one>"; }
           }
         }
+      }).state('cam', {
+        url: '/cam',
+        controller: 'BpmController',
+        controllerAs: 'bpmc',
+        templateUrl: 'js/bpm/tasks.html'
       });
 
     $urlRouterProvider.otherwise('/');
