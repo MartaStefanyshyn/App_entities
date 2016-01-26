@@ -35,6 +35,24 @@
         controller: 'BpmController',
         controllerAs: 'bpmc',
         templateUrl: 'js/bpm/tasks.html'
+      }).state('company_validation', {
+        url: '/company_validation/:procInsId',
+        controller: 'BpmController',
+        controllerAs: 'bpmc',
+        templateUrl: 'js/bpm/validation.html',
+        params: {
+          'procInsId': ''
+        }
+      }).state('kendo', {
+        url: '/kendo',
+        controller: 'KendoController',
+        controllerAs: 'knd',
+        templateUrl: 'js/kendo_tutorial/kendo.html'
+      }).state('kendo_search', {
+        url: '/kendo_search',
+        controller: 'SearchController',
+        controllerAs: 'srch',
+        templateUrl: 'js/kendo_tutorial/kendo_search.html'
       });
 
     $urlRouterProvider.otherwise('/');
