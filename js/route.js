@@ -53,6 +53,14 @@
         controller: 'SearchController',
         controllerAs: 'srch',
         templateUrl: 'js/kendo_tutorial/kendo_search.html'
+      }).state('kendo_dir', {
+        url: '/kendo_dir',
+        views: {
+          '': {
+            template: function(params) {
+                   return "<kendo-collection></kendo-collection>"; }
+          }
+        }
       });
 
     $urlRouterProvider.otherwise('/');

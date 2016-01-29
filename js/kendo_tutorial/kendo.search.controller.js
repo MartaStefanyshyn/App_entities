@@ -18,24 +18,35 @@
                  {
                     "field":"name",
                     "operator":"eq",
-                    "value":q},
+                    "value":q[i]},
                  {
                      "field":"category",
                       "operator":"eq",
-                      "value":q}
+                      "value":q[i]}
              ]},
+        ]);
+      grid.sort([
+          {
+            "field": "name",
+            "dir": "asc"
+        }
         ]);
     }
     var dataSource = new kendo.data.DataSource({
       data: [
         { name: "Tea", category: "Beverages" },
         { name: "Coffee", category: "Beverages" },
-        { name: "Ham", category: "Food" }
+        { name: "Ham", category: "Food" },
+        { name: "Aaa", category: "Food" },
+        { name: "Sss", category: "Food" },
+        { name: "Bbb", category: "Food" }
       ],
     });
 
     vm.gridResult = {
       dataSource: dataSource,
+      sortable: true,
+      filterable: true,
       columns: [
           {
             field: "name",

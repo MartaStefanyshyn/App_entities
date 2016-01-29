@@ -3,11 +3,22 @@
 
   angular
     .module('entitiesAngular')
-    .controller('KendoController', KendoController);
+    .directive('kendoCollection', kendoCollection);
 
   /** @ngInject */
-  function KendoController() {
-    var vm = this;
+  function kendoCollection() {
+    var directive = {
+        restrict: "E",
+        templateUrl: 'js/kendo_tutorial/kendo_dir.html',
+        controller: KendoCollectionController,
+        controllerAs: 'vm',
+        bindToController: true
+    };
+    return directive;
+
+    /** @ngInject */
+    function KendoCollectionController($location, $uibModal, $log, $rootScope, $http) {
+      var vm = this;
     var entits = [];
     for (var i = 0; i<localStorage.length; i++) {
       entits.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
@@ -70,5 +81,7 @@
       ],
       editable: "inline"
     };
-  }
+   }
+ }
 })();
+
