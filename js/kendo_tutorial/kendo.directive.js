@@ -26,6 +26,8 @@
       for (var i = 0; i<localStorage.length; i++) {
         entits.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
       };
+      var columns = vm.columns.split(', ');
+      columns.push({ command: ["edit", "destroy"], title: "&nbsp;", width: "200px" });
       vm.onSearch = onSearch;
       function onSearch(){
         var q = vm.txtsearch;
@@ -96,20 +98,7 @@
         sortable: true,
         pageable: true,
         toolbar: ["create"],
-        columns: [{
-          field: "title",
-          title: "title",
-          width: "120px"
-          },{
-          field: "text",
-          title: "text",
-          width: "120px"
-          },{
-          field: "description",
-          title: "description",
-          width: "120px"},
-          { command: ["edit", "destroy"], title: "&nbsp;", width: "200px" }
-        ],
+        columns: columns,
         editable: "inline"
       };
     }

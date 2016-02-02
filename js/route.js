@@ -58,7 +58,7 @@
         views: {
           '': {
             template: function(params) {
-                   return "<kendo-collection></kendo-collection>"; }
+                   return "<kendo-collection columns='title, description, text'></kendo-collection>"; }
           }
         }
       });
