@@ -9,8 +9,9 @@
   function SearchController() {
     var vm = this;
     vm.onSearch = onSearch;
-    function onSearch(value){
-      var q = value;
+    function onSearch(){
+      var q = vm.txtsearch;
+      console.log(q);
       var grid = vm.gridResult.dataSource;
       grid.filter([
             {"logic":"or",
@@ -18,11 +19,11 @@
                  {
                     "field":"name",
                     "operator":"eq",
-                    "value":q[i]},
+                    "value":q},
                  {
                      "field":"category",
                       "operator":"eq",
-                      "value":q[i]}
+                      "value":q}
              ]},
         ]);
       grid.sort([
