@@ -97,6 +97,8 @@
         filterable: true,
         sortable: true,
         pageable: true,
+        reorderable: true,
+        resizable: true,
         toolbar: ["create"],
         columns: columns,
         editable: "inline"
