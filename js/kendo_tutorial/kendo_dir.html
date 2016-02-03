@@ -1,4 +1,6 @@
 <input class="k-input k-textbox" type=text id="txtSearch" placeholder="enter search text..." ng-model="vm.txtsearch" />
 <button class="k-button" id="btnSearch" ng-click="vm.onSearch()" >Search</button>
-<kendo-grid k-options="vm.mainGridOptions">
-</kendo-grid>
+
+<kendo-sortable options="vm.sortableOptions">
+  <div kendo-grid="vm.myGrid" k-options="vm.mainGridOptions"></div>
+</kendo-sortable>

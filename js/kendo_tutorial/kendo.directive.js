@@ -103,6 +103,27 @@
         columns: columns,
         editable: "inline"
       };
+
+      vm.sortableOptions = {
+        filter: ".k-grid tr[data-uid]",
+        hint: $.noop,
+        cursor: "move",
+        placeholder: function(element) {
+          return element
+                    .clone()
+                    .removeAttr("uid")
+                    .addClass("k-state-hover")
+                    .css("opacity", 0.65);
+        },
+        container: ".k-grid tbody",
+        change: function(e) {
+          var grid = vm.myGrid,
+              dataItem = grid.dataSource.getByUid(e.item.data("uid"));
+
+          grid.dataSource.remove(dataItem);
+          grid.dataSource.insert(e.newIndex, dataItem);
+        }
+      };
     }
   }
 })();
