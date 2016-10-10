@@ -17,9 +17,31 @@
     return directive;
 
     /** @ngInject */
-    function SidebarController($location, $uibModal, $log, $rootScope, $http) {
+    function SidebarController($location, $uibModal, $log, $rootScope, $http, $state) {
       var vm = this;
       vm.entits = [];
+      vm.checkAuth = function() {
+        // console.log($rootScope.user);
+        //   if (angular.equals({}, $rootScope.user)) {
+        //     $state.go('login')
+        //   } else {
+        //     alert('You are logged in');
+        //   }
+        $http.get('/check_authentication').then((resp) => {
+          console.log(resp);
+        alert('You are logged in');
+          // $state.go('login');
+        }).catch((resp) => {
+          console.log(11111, resp);
+          $state.go('login');
+        })
+
+
+      };
+
+      $rootScope.$on('sessionExpiring', function(){
+          $rootScope.user = {};
+      });
 
       for (var i = 0; i<localStorage.length; i++) {
         vm.entits.push(JSON.parse(localStorage.getItem(localStorage.key(i))));

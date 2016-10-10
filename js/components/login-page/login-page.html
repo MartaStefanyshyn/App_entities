@@ -1,0 +1,12 @@
+<h1 class="text-center">Login</h1>
+<form class="form col-md-12 center-block">
+    <div class="form-group">
+        <input type="text" class="form-control input-lg" placeholder="Username" ng-model="ctrl.credentials.username">
+    </div>
+    <div class="form-group">
+        <input type="password" class="form-control input-lg" placeholder="Password" ng-model="ctrl.credentials.password">
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary btn-lg btn-block" ng-click="ctrl.login()">Sign In</button>
+    </div>
+</form>
